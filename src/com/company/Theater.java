@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Theater {
@@ -28,6 +29,11 @@ public class Theater {
     }
 
     public boolean reserveSeat(String seatNumber) {
+        Seat requestedSeat = new Seat(seatNumber);
+        int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
+        if(foundSeat>=0){
+            return seats.get(foundSeat).reserve();
+        }
 
     }
 
