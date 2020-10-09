@@ -9,5 +9,12 @@ public class Main {
     }else{
         System.out.println("Seat already reserved for somebody else");
     }
+
+	if(theater.reserveSeat("B07")){
+	    System.out.println("Seat reserved for you");
+	}else{
+	    System.out.println("Seat already reserved for somebody else");
+	}
+
     }
 }
