@@ -33,6 +33,9 @@ public class Theater {
         int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
         if(foundSeat>=0){
             return seats.get(foundSeat).reserve();
+        }else{
+            System.out.println("No such a seat:"+seatNumber);
+            return false;
         }
 
     }
