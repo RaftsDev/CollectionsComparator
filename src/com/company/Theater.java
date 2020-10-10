@@ -36,7 +36,7 @@ public class Theater {
     }
 
     public boolean reserveSeat(String seatNumber) {
-        Seat requestedSeat = new Seat(seatNumber);
+        Seat requestedSeat = new Seat(seatNumber, 0);
         int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
         if(foundSeat>=0){
             return seats.get(foundSeat).reserve();
@@ -49,11 +49,11 @@ public class Theater {
 
 
         // for testing
-        public Collection<Seat> getSeats() {
+        public Collection <Seat> getSeats() {
             return seats;
         }
 
-        private class Seat implements Comparable<Seat> {
+        public class Seat implements Comparable<Seat> {
             private final String seatNumber;
             private double price;
             private boolean reserved = false;
