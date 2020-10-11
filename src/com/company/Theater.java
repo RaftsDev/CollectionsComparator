@@ -9,7 +9,7 @@ public class Theater {
     private final String theatreName;
     //private Collection<Seat> seats = new HashSet<>(); //Not sorted in order
     //private Collection<Seat> seats = new TreeSet<>(); //Error
-    private List<Seat> seats = new ArrayList<>();
+    private Collection<Seat> seats = new ArrayList<>();
 
     public Theater(String theatreName, int numRows, int seatsPerRow) {
         this.theatreName = theatreName;
@@ -37,7 +37,7 @@ public class Theater {
 
     public boolean reserveSeat(String seatNumber) {
         Seat requestedSeat = new Seat(seatNumber, 0);
-        int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
+        int foundSeat = Collections.binarySearch(List<? extends Seat> seats, requestedSeat, null);
         if(foundSeat>=0){
             return seats.get(foundSeat).reserve();
         }else{
