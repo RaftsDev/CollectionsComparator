@@ -5,12 +5,13 @@ public class Theater {
     private final String theaterName;
     private List<Seat> seats = new ArrayList<>();
 
-    static final Comparator<Seat> PRICE_ORDER;
+    static final Comparator<Seat> PRICE_ORDER; //Instance of interface ... or what ?
+
 
     static {
         PRICE_ORDER = new Comparator<Seat>() {
             @Override
-            public int compare(Seat seat1, Seat seat2) {
+            public int compare(Seat seat1, Seat seat2) {     // Is it a method ?
                 if (seat1.getPrice() < seat2.getPrice()) {
                     return -1;
                 } else if (seat1.getPrice() > seat2.getPrice()) {
