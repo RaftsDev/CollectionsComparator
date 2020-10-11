@@ -1,10 +1,6 @@
 package com.company;
-
 import java.util.*;
 
-/**
- * Created by dev on 2/12/2015.
- */
 public class Theater {
     private final String theaterName;
     private List<Seat> seats = new ArrayList<>();
@@ -109,5 +105,4 @@ public class Theater {
             return price;
         }
     }
-
 }
