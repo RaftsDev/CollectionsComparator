@@ -5,8 +5,8 @@ import java.util.*;
 /**
  * Created by dev on 2/12/2015.
  */
-public class Theatre {
-    private final String theatreName;
+public class Theater {
+    private final String theaterName;
     private List<Seat> seats = new ArrayList<>();
 
     static final Comparator<Seat> PRICE_ORDER;
@@ -26,8 +26,8 @@ public class Theatre {
         };
     }
 
-    public Theatre(String theatreName, int numRows, int seatsPerRow) {
-        this.theatreName = theatreName;
+    public Theater(String theaterName, int numRows, int seatsPerRow) {
+        this.theaterName = theaterName;
 
         int lastRow = 'A' + (numRows -1);
         for (char row = 'A'; row <= lastRow; row++) {
@@ -46,8 +46,8 @@ public class Theatre {
         }
     }
 
-    public String getTheatreName() {
-        return theatreName;
+    public String getTheaterName() {
+        return theaterName;
     }
 
     public boolean reserveSeat(String seatNumber) {
